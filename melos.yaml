@@ -1,0 +1,22 @@
+name: fcm_template
+sdkPath: .fvm/flutter_sdk
+
+packages:
+  - .
+
+scripts:
+  clean:
+    name: Clean the project
+    exec: flutter clean && rm -rf **/*.{freezed,g}.dart
+
+  generate:
+    name: Generate code
+    exec: dart run build_runner build --delete-conflicting-outputs
+    packageFilters:
+      dependsOn: build_runner
+
+command:
+  bootstrap:
+    hooks:
+      pre: melos run clean
+      post: melos run generate
