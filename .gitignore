@@ -1,6 +1,10 @@
 # FVM Version Cache
 .fvm/
 
+# Platforms
+ios/
+android/
+
 # Firebase
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
